@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright &copy; 2016 UMCO, Our Umbraco and other contributors
+Copyright &copy; 2018 Matt Brailsford
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
