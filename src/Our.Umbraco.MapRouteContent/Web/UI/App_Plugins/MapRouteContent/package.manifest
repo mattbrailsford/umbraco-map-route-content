@@ -1,0 +1,10 @@
+﻿{
+	"javascript": [
+		"~/App_Plugins/MapRouteContent/js/mrc.resources.js",
+		"~/App_Plugins/MapRouteContent/js/mrc.directives.js",
+		"~/App_Plugins/MapRouteContent/js/mrc.controllers.js"
+	],
+  "css" : [
+      "~/App_Plugins/MapRouteContent/css/mrc.css"
+  ]
+}

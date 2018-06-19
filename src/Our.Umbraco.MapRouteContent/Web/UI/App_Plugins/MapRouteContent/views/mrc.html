@@ -1,0 +1,51 @@
+﻿<div id="mrc-{{model.id}}" class="mrc-editor" ng-controller="Our.Umbraco.Controllers.MapRouteContentController as vm">
+
+	<mrc-media-picker-wrapper pick="!vm.hasRouteFile" on-pick="vm.handlePick(pickedItem)" />
+
+	<div ng-if="vm.hasRouteFile" class="mrc-editor-wrapper">
+
+		<a href="" class="mrc-button--delete mrc-button" ng-click="vm.deleteRoute()" prevent-default><i class="icon icon-delete" /></a>
+
+		<div class="mrc-map"></div>
+
+		<div class="mrc-controls">
+			<div class="mrc-controls__buttons mrc-controls__buttons--left">
+				<button class="mrc-controls__button mrc-button" ng-click="vm.jumpToStart()" ng-disabled="!vm.route" prevent-default><i class="icon icon-navigation-first" /></button>
+				<button class="mrc-controls__button mrc-button" ng-click="vm.jumpBack()" ng-disabled="!vm.route" prevent-default><i class="icon icon-previous-media" /></button>
+				<button class="mrc-controls__button mrc-button" ng-click="vm.stepBack()" ng-disabled="!vm.route" prevent-default><i class="icon icon-previous" /></button>
+			</div>
+			<div class="mrc-controls__slider">
+				<input type="range" min="0" max="{{ vm.route.lengthMetres || 0 }}" step="10" ng-model="vm.currentDistance" ng-disabled="!vm.route" />
+			</div>
+			<div class="mrc-controls__buttons mrc-controls__buttons--right">
+				<button class="mrc-controls__button mrc-button" ng-click="vm.stepForward()" ng-disabled="!vm.route" prevent-default><i class="icon icon-next" /></button>
+				<button class="mrc-controls__button mrc-button" ng-click="vm.jumpForward()" ng-disabled="!vm.route" prevent-default><i class="icon icon-next-media" /></button>
+				<button class="mrc-controls__button mrc-button" ng-click="vm.jumpToEnd()" ng-disabled="!vm.route" prevent-default><i class="icon icon-navigation-last" /></button>
+			</div>
+		</div>
+
+		<a href="" class="umb-node-preview-add" ng-click="vm.addMarker($event)" ng-show="vm.canAddMarker()" prevent-default >
+			Add Marker Here
+		</a>
+
+		<div class="umb-editor umb-contentpicker">
+			<umb-node-preview ng-repeat="marker in vm.model.value.markers"
+				icon="marker.content.icon || 'icon-map-location'"
+				name="vm.getMarkerName($index, marker)"
+				description="vm.getMarkerDescription(marker)"
+				sortable="false"
+				allow-remove="true"
+				allow-open="true"
+				on-remove="vm.removeMarker($index)"
+				on-open="vm.editMarkerContent($event, $index, marker)">
+			</umb-node-preview>
+		</div>
+
+	</div>
+
+	<inner-content-overlay ng-if="vm.icOverlayConfig.show"
+		config="vm.icOverlayConfig">
+	</inner-content-overlay>
+
+
+</div>

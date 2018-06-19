@@ -1,0 +1,196 @@
+﻿.mrc-editor-wrapper {
+	position: relative;
+	width: 66.6%;
+}
+
+.mrc-editor-wrapper .umb-node-preview-add,
+.mrc-editor-wrapper .umb-node-preview {
+	width: 100%;
+	max-width: 100%;
+}
+
+.mrc-editor-wrapper .umb-node-preview-add {
+	margin-bottom: 5px;
+}
+
+.mrc-map {
+	width: 100%;
+	height: 300px;
+}
+
+.mrc-button {
+	display: inline-block;
+	color: #333;
+	background-color: #f3f3f5;
+	border: 0;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+	transition: color .25s ease, background-color .25s ease;
+	padding: 0;
+}
+
+.mrc-button:hover,
+.mrc-button:focus {
+	background-color: #675e7a;
+	color: white;
+	text-decoration: none;
+}
+
+.mrc-button--delete {
+	display: block;
+	position: absolute;
+	right: -30px;
+}
+
+.mrc-controls {
+	display: flex;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	align-items: center;
+}
+
+.mrc-controls__slider  {
+	flex: 1;
+}
+
+.mrc-controls__buttons {
+	display: flex;
+}
+
+.mrc-controls__buttons--left .mrc-controls__button {
+	margin-right: 10px;
+}
+
+.mrc-controls__buttons--right .mrc-controls__button {
+	margin-left: 10px;
+}
+
+.mrc-controls input[type=range] {
+	width: 100%;
+}
+
+.mrc-trace-marker-icon {
+	background-color: #675e7a;
+	border-radius: 15px;
+}
+
+.mrc-marker-icon:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #00aea2;
+	border-radius: 50% 50% 50% 0;
+	transform: rotate(-45deg);
+}
+
+/* Slider reset */
+.mrc-controls__slider input[type=range] {
+	-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+	width: 100%; /* Specific width is required for Firefox. */
+	background: transparent; /* Otherwise white in Chrome */
+}
+
+.mrc-controls__slider input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+}
+
+.mrc-controls__slider input[type=range]:focus {
+	outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+.mrc-controls__slider input[type=range]::-ms-track {
+	width: 100%;
+	cursor: pointer;
+	/* Hides the slider so custom styles can be added */
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+
+/* Slider thumb */
+.mrc-controls__slider input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border: 0;
+	height: 30px;
+	width: 10px;
+	background: #333;
+	cursor: pointer;
+	margin-top: 0; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+.mrc-controls__slider input[type=range]::-moz-range-thumb {
+	border: 0;
+	height: 30px;
+	width: 15px;
+	background: #333;
+	cursor: pointer;
+	margin-top: 0;
+}
+
+.mrc-controls__slider input[type=range]::-ms-thumb {
+	border: 0;
+	height: 30px;
+	width: 15px;
+	background: #333;
+	cursor: pointer;
+	margin-top: 0;
+}
+
+/* Slider track */
+.mrc-controls__slider input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 30px;
+	cursor: pointer;
+	color: transparent;
+	background: transparent;
+	background-color: #f3f3f5;
+	border: 0;
+}
+
+.mrc-controls__slider input[type=range]:focus::-webkit-slider-runnable-track {
+	background: #f3f3f5;
+}
+
+.mrc-controls__slider input[type=range]::-moz-range-track {
+	width: 100%;
+	height: 30px;
+	cursor: pointer;
+	color: transparent;
+	background: transparent;
+	background-color: #f3f3f5;
+	border: 0;
+}
+
+.mrc-controls__slider input[type=range]::-ms-track {
+	width: 100%;
+	height: 30px;
+	cursor: pointer;
+	color: transparent;
+	background: transparent;
+	background-color: #f3f3f5;
+	border: 0;
+}
+
+.mrc-controls__slider input[type=range]::-ms-fill-lower {
+	background: #675e7a;
+}
+
+.mrc-controls__slider input[type=range]:focus::-ms-fill-lower {
+	background: #675e7a;
+}
+
+.mrc-controls__slider input[type=range]::-ms-fill-upper {
+	background: #675e7a;
+}
+
+.mrc-controls__slider input[type=range]:focus::-ms-fill-upper {
+	background: #675e7a;
+}
